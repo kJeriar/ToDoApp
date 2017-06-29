@@ -1,26 +1,39 @@
-$(document).ready(
-    function(){
-        $('#button').click(
-            function(){
-                var toAdd = $('input[name=ListItem]').val();
-                 $('ol').append('<li>' + toAdd + '</li>');
-            });
-       
-       $("input[name=ListItem]").keyup(function(event){
-          if(event.keyCode == 13){
-            $("#button").click();
-          }         
-      });
-      
-      $(document).on('dblclick','li', function(){
-        $(this).toggleClass('strike').fadeOut('slow');    
-      });
-      
-      $('input').focus(function() {
-        $(this).val('');
-      });
-      
-      $('ol').sortable();  
-      
-    }
-);
+//funcion para agregar tareas
+
+function addTodoItem() {
+  var todoItem = $("#new-todo-item").val();
+  $("#todo-list").append("<li><input type='checkbox'" + 
+                         " name='todo-item-done'" + 
+                         " class='todo-item-done'"+ 
+                         " value='" + todoItem + "' /> " + 
+                         todoItem +
+                         " <button class='todo-item-delete'>"+
+                         "Delete</button></li>");
+  
+ $("#new-todo-item").val("");
+}
+//funcion para borrar tareas
+function deleteTodoItem(e, item) {
+  e.preventDefault();
+  $(item).parent().fadeOut('slow', function() { 
+    $(item).parent().remove();
+  });
+}
+
+//listado de tareas
+$(function() {
+ 
+   $("#add").on('click', function(e){
+     e.preventDefault();
+     addTodoItem()
+   });
+   //al hacer click en delete borrara la tarea de la lista
+  
+  $("#todo-list").on('click', '.todo-item-delete', function(e){
+    var item = this; 
+    deleteTodoItem(e, item)
+  })
+  
+  $(document).on('click', ".todo-item-done", completeTodoItem)
+
+});
