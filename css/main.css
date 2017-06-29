@@ -1,41 +1,11 @@
 
 body {
-  background-color: #e8e8e8;
+  background-color: #fb0;
   padding: 0;
   margin: 0;
   line-height: 1.5;
 }
 
-.container{
- max-width: 1024px;
-  margin: 0 auto;
-  background-color: #fb0;
-  padding: 8px;
-}
-
-
 form {
 display: inline-block;
 }
-
-input{
-padding: 4px 15px 4px 5px;
-}
-
-#button{
-display: inline-block;
-background-color:black;
-color:#e8e8e8;
-border-radius: 5px;
-text-align:center;
-padding: 5px 15px;
-}
-
-#button:hover{
-cursor: pointer;
-opacity: .8;}
-
-
-li:hover{
-  cursor: pointer;
- }
