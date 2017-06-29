@@ -13,16 +13,17 @@
     
     <div class="container">
 		<h2>To Do App</h2>
+  	<form id="form-add-todo" class="form-add-todo">
 
-		<label for=""> ingrese su tarea a realizar: </label>
-		<form name="toDoList">
-		<input type="text" name="ListItem"/>
-		</form>
-    
-		<div id="button">agregar</div>
-		<br/>
-		<label for=""> estas son sus tareas a realizar: </label>
-		<ol></ol>
+    <h4>Tareas por hacer: </h4>
+    <input type="text" id="new-todo-item" class="new-todo-item" name="todo" />
+    <input type="submit" id="add" class="add" value="add the todo" />
+  </form>
+  
+  <form id="form-todo-list">
+    <ul id="todo-list" class="todo-list">
+    </ul>
+  </form>
   
 
 
