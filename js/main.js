@@ -1,4 +1,4 @@
-//funcion para agregar tareas
+// agregar tareas
 
 function addTodoItem() {
   var todoItem = $("#new-todo-item").val();
@@ -12,7 +12,7 @@ function addTodoItem() {
   
  $("#new-todo-item").val("");
 }
-//funcion para borrar tareas
+//borrar tareas
 function deleteTodoItem(e, item) {
   e.preventDefault();
   $(item).parent().fadeOut('slow', function() { 
@@ -20,15 +20,13 @@ function deleteTodoItem(e, item) {
   });
 }
 
-//listado de tareas
+//listado
 $(function() {
  
    $("#add").on('click', function(e){
      e.preventDefault();
      addTodoItem()
-   });
-   //al hacer click en delete borrara la tarea de la lista
-  
+   });  
   $("#todo-list").on('click', '.todo-item-delete', function(e){
     var item = this; 
     deleteTodoItem(e, item)
